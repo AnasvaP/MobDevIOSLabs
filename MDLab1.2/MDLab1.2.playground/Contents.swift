@@ -201,3 +201,68 @@ print(passedPerGroup)
 //
 //Завдання 5
 //["ІВ-72": ["Бортнік Василь", "Киба Олег", "Овчарова Юстіна", "Тимко Андрій"], "ІВ-73": ["Давиденко Костянтин", "Капінус Артем", "Чередніченко Владислав", "Гончар Юрій", "Науменко Павло"], "ІВ-71": ["Музика Олександр", "Трудов Антон", "Гуменюк Олександр", "Феофанов Іван", "Андрющенко Данило", "Корнійчук Ольга"]]
+
+print()
+print("PART2")
+
+enum Direction {
+    case latitude//широта
+    case longitude //довгота
+}
+
+
+class CoordinateAP{
+    
+    var degrees: Int
+    var minutes: UInt
+    var seconds: UInt
+    
+    var direction = Direction.self
+
+    init() {
+        self.degrees = 0
+        self.minutes = 0
+        self.seconds = 0
+    }
+    
+    init(degrees: Int, mimutes: UInt, seconds:UInt ) {
+        self.degrees = degrees
+        self.minutes = mimutes
+        self.seconds = seconds
+    }
+    
+    func taskA(dir: Direction) -> String {  // “xx°yy′zz″ Z”
+        var directionString: String = "Z"
+        
+        if dir == Direction.latitude && degrees >= -90 && degrees <= 90 && minutes >= 0 && minutes <= 60 && seconds >= 0 && seconds <= 60  {
+            switch degrees {
+                case -90..<0 : directionString = "S"
+                case 0...90 : directionString = "N"
+                default:
+                    print("error")
+                }
+            }
+        
+        else if dir == Direction.longitude && degrees >= -180 && degrees <= 180 && minutes >= 0 && minutes <= 60 && seconds >= 0 && seconds <= 60  {
+            switch degrees {
+                case -180..<0 : directionString = "W"
+                case 0...180 : directionString = "E"
+                default:
+                    print("error")
+                }
+        }
+        else {
+                print("ERROR - input another value")
+                return "error"
+            }
+        let str: String = "\(degrees)°\(minutes)′\(seconds)″ \(directionString)"
+        print(str)
+        return str
+    }
+}
+
+var coordLat = CoordinateAP(degrees: 33, mimutes: 19, seconds: 2)
+coordLat.taskA(dir: Direction.latitude)
+var coordLon = CoordinateAP(degrees: -140, mimutes: 4, seconds: 3)
+coordLon.taskA(dir: Direction.longitude)
+    
