@@ -291,7 +291,7 @@ func taskC(coord1: CoordinateAP, coord2: CoordinateAP, dir1: Direction, dir2: Di
         avgCoord.minutes = (coord1.minutes + coord2.minutes)/2
         avgCoord.seconds = (coord1.seconds + coord2.seconds)/2
     } else {
-        print("coordinate task c2 =  nil")
+        print("coordinate task c =  nil")
         return nil
     }
     print("coordinate task c = ", avgCoord.degrees, avgCoord.minutes, avgCoord.seconds)
@@ -300,12 +300,16 @@ func taskC(coord1: CoordinateAP, coord2: CoordinateAP, dir1: Direction, dir2: Di
 
 var coord = CoordinateAP()
 var coord1 = CoordinateAP(degrees: 33, mimutes: 19, seconds: 25)
-var coord2 = CoordinateAP(degrees: 40, mimutes: 50, seconds: 34)
-print("task A = ", taskA(coord: coord1, dir: Direction.latitude))
-print("task A = ", taskA(coord: coord2, dir: Direction.longitude))
+var coord2 = CoordinateAP(degrees: -40, mimutes: 50, seconds: 34)
+var coord3 = CoordinateAP(degrees: -190, mimutes: 40, seconds: 3)
 
-print("task B = ", taskB(coord: coord1, dir: Direction.latitude))
-print("task B = ", taskB(coord: coord2, dir: Direction.longitude))
+print("task A:", taskA(coord: coord1, dir: Direction.latitude))
+print("task A:", taskA(coord: coord2, dir: Direction.longitude))
+
+print("task B:", taskB(coord: coord1, dir: Direction.latitude))
+print("task B:", taskB(coord: coord2, dir: Direction.longitude))
+
+print("task A: ", taskA(coord: coord3, dir: Direction.latitude))
 
 taskC(coord1: CoordinateAP(degrees: 22, mimutes: 4, seconds: 6), coord2: CoordinateAP(degrees: 56, mimutes: 3, seconds: 12), dir1: Direction.longitude, dir2: Direction.latitude)
 coord.taskD(coord1: coord1, coord2: coord2, dir1: Direction.latitude, dir2: Direction.latitude)
