@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uAx-dd-HYn">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,21 +8,125 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--drowing-->
         <scene sceneID="kEv-zu-Dpm">
             <objects>
-                <viewController id="kQd-zK-JTX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrawingVC" id="kQd-zK-JTX" customClass="DrawingVC" customModule="mobileDevelopmentLab1_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6w7-H8-wAX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VWh-bI-jkj">
+                                <rect key="frame" x="20" y="54" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Графік"/>
+                                    <segment title="Діаграма"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlAction:" destination="kQd-zK-JTX" eventType="valueChanged" id="uX0-9e-LS3"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFh-eF-YLO" customClass="DrawingView" customModule="mobileDevelopmentLab1_1" customModuleProvider="target">
+                                <rect key="frame" x="25" y="94" width="364" height="689"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="364" id="XJC-Kb-8ud"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="kQr-A1-yNJ"/>
+                                    <constraint firstAttribute="width" constant="364" id="uPg-7A-3AX"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XJC-Kb-8ud"/>
+                                        <exclude reference="kQr-A1-yNJ"/>
+                                        <exclude reference="uPg-7A-3AX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="XJC-Kb-8ud"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="uPg-7A-3AX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="kQr-A1-yNJ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Wvw-xQ-gUw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VWh-bI-jkj" firstAttribute="leading" secondItem="Wvw-xQ-gUw" secondAttribute="leading" constant="20" id="3xp-Kz-LwH"/>
+                            <constraint firstItem="Wvw-xQ-gUw" firstAttribute="bottom" secondItem="hFh-eF-YLO" secondAttribute="bottom" constant="30" id="R3q-Nj-ddj"/>
+                            <constraint firstItem="VWh-bI-jkj" firstAttribute="leading" secondItem="Wvw-xQ-gUw" secondAttribute="leading" constant="150" id="SP7-2i-r9p"/>
+                            <constraint firstItem="hFh-eF-YLO" firstAttribute="top" secondItem="VWh-bI-jkj" secondAttribute="bottom" constant="10" id="TOA-yS-Ntd"/>
+                            <constraint firstItem="hFh-eF-YLO" firstAttribute="leading" secondItem="Wvw-xQ-gUw" secondAttribute="leading" constant="60" id="TgN-jj-i68"/>
+                            <constraint firstItem="hFh-eF-YLO" firstAttribute="top" secondItem="VWh-bI-jkj" secondAttribute="bottom" constant="9" id="Tz6-Af-8ps"/>
+                            <constraint firstItem="Wvw-xQ-gUw" firstAttribute="trailing" secondItem="VWh-bI-jkj" secondAttribute="trailing" constant="150" id="b5J-7u-jms"/>
+                            <constraint firstItem="Wvw-xQ-gUw" firstAttribute="trailing" secondItem="hFh-eF-YLO" secondAttribute="trailing" constant="25" id="eK2-ii-mlZ"/>
+                            <constraint firstItem="VWh-bI-jkj" firstAttribute="top" secondItem="Wvw-xQ-gUw" secondAttribute="top" constant="10" id="muj-fN-es9"/>
+                            <constraint firstAttribute="trailing" secondItem="VWh-bI-jkj" secondAttribute="trailing" constant="20" id="nhV-FE-8WJ"/>
+                            <constraint firstItem="hFh-eF-YLO" firstAttribute="leading" secondItem="Wvw-xQ-gUw" secondAttribute="leading" constant="25" id="t5F-3I-XA9"/>
+                            <constraint firstItem="Wvw-xQ-gUw" firstAttribute="bottom" secondItem="hFh-eF-YLO" secondAttribute="bottom" constant="20" id="x2q-83-SGl"/>
+                            <constraint firstItem="hFh-eF-YLO" firstAttribute="centerX" secondItem="6w7-H8-wAX" secondAttribute="centerX" id="ynx-ht-fdx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="R3q-Nj-ddj"/>
+                                <exclude reference="b5J-7u-jms"/>
+                                <exclude reference="eK2-ii-mlZ"/>
+                                <exclude reference="x2q-83-SGl"/>
+                                <exclude reference="TOA-yS-Ntd"/>
+                                <exclude reference="TgN-jj-i68"/>
+                                <exclude reference="Tz6-Af-8ps"/>
+                                <exclude reference="t5F-3I-XA9"/>
+                                <exclude reference="ynx-ht-fdx"/>
+                                <exclude reference="3xp-Kz-LwH"/>
+                                <exclude reference="SP7-2i-r9p"/>
+                                <exclude reference="nhV-FE-8WJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="b5J-7u-jms"/>
+                                <exclude reference="eK2-ii-mlZ"/>
+                                <include reference="x2q-83-SGl"/>
+                                <include reference="TOA-yS-Ntd"/>
+                                <exclude reference="TgN-jj-i68"/>
+                                <include reference="ynx-ht-fdx"/>
+                                <include reference="SP7-2i-r9p"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="R3q-Nj-ddj"/>
+                                <include reference="eK2-ii-mlZ"/>
+                                <include reference="Tz6-Af-8ps"/>
+                                <include reference="t5F-3I-XA9"/>
+                                <include reference="3xp-Kz-LwH"/>
+                                <include reference="nhV-FE-8WJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="TgN-jj-i68"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="KlE-1o-YvH"/>
+                    <tabBarItem key="tabBarItem" title="drowing" image="scribble" catalog="system" id="KlE-1o-YvH"/>
+                    <connections>
+                        <outlet property="segmentControl" destination="VWh-bI-jkj" id="tzj-zX-UF6"/>
+                        <outlet property="viewForDraw" destination="hFh-eF-YLO" id="tc2-2M-zus"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yP-Rb-LI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="82"/>
+            <point key="canvasLocation" x="893.97321428571422" y="79.710144927536234"/>
         </scene>
         <!--button1-->
         <scene sceneID="hQE-2c-3M4">
@@ -33,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhK-Vq-Cps">
-                                <rect key="frame" x="121" y="417.5" width="172.5" height="61"/>
+                                <rect key="frame" x="121" y="417.66666666666669" width="172.33333333333337" height="61"/>
                                 <string key="text">Полюхович Анастасія
 Група ІО-82 
 ЗК ІО-8217  </string>
@@ -76,8 +180,12 @@
     </scenes>
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="scribble" catalog="system" width="128" height="118"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

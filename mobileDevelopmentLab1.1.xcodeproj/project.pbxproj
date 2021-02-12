@@ -13,6 +13,8 @@
 		F9153C5425CFE90B009710DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9153C5225CFE90B009710DC /* Main.storyboard */; };
 		F9153C5625CFE90E009710DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9153C5525CFE90E009710DC /* Assets.xcassets */; };
 		F9153C5925CFE90E009710DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9153C5725CFE90E009710DC /* LaunchScreen.storyboard */; };
+		F975833D25D2EA0C00481377 /* DrawingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975833C25D2EA0C00481377 /* DrawingVC.swift */; };
+		F975834125D2EBC400481377 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975834025D2EBC400481377 /* DrawingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		F9153C5525CFE90E009710DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9153C5825CFE90E009710DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9153C5A25CFE90E009710DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F975833C25D2EA0C00481377 /* DrawingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingVC.swift; sourceTree = "<group>"; };
+		F975834025D2EBC400481377 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +60,15 @@
 		F9153C4B25CFE90B009710DC /* mobileDevelopmentLab1.1 */ = {
 			isa = PBXGroup;
 			children = (
-				F9153C4C25CFE90B009710DC /* AppDelegate.swift */,
-				F9153C4E25CFE90B009710DC /* SceneDelegate.swift */,
 				F9153C5025CFE90B009710DC /* ViewController.swift */,
+				F975833C25D2EA0C00481377 /* DrawingVC.swift */,
+				F975834025D2EBC400481377 /* DrawingView.swift */,
 				F9153C5225CFE90B009710DC /* Main.storyboard */,
 				F9153C5525CFE90E009710DC /* Assets.xcassets */,
 				F9153C5725CFE90E009710DC /* LaunchScreen.storyboard */,
 				F9153C5A25CFE90E009710DC /* Info.plist */,
+				F9153C4C25CFE90B009710DC /* AppDelegate.swift */,
+				F9153C4E25CFE90B009710DC /* SceneDelegate.swift */,
 			);
 			path = mobileDevelopmentLab1.1;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			files = (
 				F9153C5125CFE90B009710DC /* ViewController.swift in Sources */,
 				F9153C4D25CFE90B009710DC /* AppDelegate.swift in Sources */,
+				F975834125D2EBC400481377 /* DrawingView.swift in Sources */,
 				F9153C4F25CFE90B009710DC /* SceneDelegate.swift in Sources */,
+				F975833D25D2EA0C00481377 /* DrawingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
