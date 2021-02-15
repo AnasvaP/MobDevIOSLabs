@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  mobileDevelopmentLab1.1
 //
-//  Created by Anastasiia Poliukovych on 07.02.2021.
+//  Created by Anastasiia Poliuchovych on 07.02.2021.
 //
 
 import UIKit

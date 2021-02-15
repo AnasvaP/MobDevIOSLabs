@@ -11,44 +11,51 @@
         <!--drowing-->
         <scene sceneID="kEv-zu-Dpm">
             <objects>
-                <viewController storyboardIdentifier="DrawingVC" id="kQd-zK-JTX" customClass="DrawingVC" customModule="mobileDevelopmentLab1_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kQd-zK-JTX" customClass="DrawingViewController" customModule="mobileDevelopmentLab1_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6w7-H8-wAX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VWh-bI-jkj">
-                                <rect key="frame" x="20" y="54" width="374" height="32"/>
+                                <rect key="frame" x="20" y="54" width="374" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="THp-lU-g43"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="dEI-mM-6db"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Графік"/>
                                     <segment title="Діаграма"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentControlAction:" destination="kQd-zK-JTX" eventType="valueChanged" id="uX0-9e-LS3"/>
+                                    <action selector="indexControl:" destination="kQd-zK-JTX" eventType="valueChanged" id="GfW-7B-T2c"/>
                                 </connections>
                             </segmentedControl>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl6-M8-A3o" customClass="DrawingArcView" customModule="mobileDevelopmentLab1_1" customModuleProvider="target">
+                                <rect key="frame" x="67" y="308" width="280" height="280"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kl6-M8-A3o" secondAttribute="height" multiplier="1:1" id="9MH-vL-kCc"/>
+                                    <constraint firstAttribute="width" constant="280" id="MNN-p5-e8N"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFh-eF-YLO" customClass="DrawingView" customModule="mobileDevelopmentLab1_1" customModuleProvider="target">
-                                <rect key="frame" x="25" y="94" width="364" height="689"/>
+                                <rect key="frame" x="57" y="308" width="300" height="280"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="364" id="XJC-Kb-8ud"/>
+                                    <constraint firstAttribute="height" constant="280" id="4ef-C0-pHh"/>
+                                    <constraint firstAttribute="width" constant="300" id="5eZ-31-EDg"/>
+                                    <constraint firstAttribute="height" constant="280" id="Y3G-LD-Sw2"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="kQr-A1-yNJ"/>
-                                    <constraint firstAttribute="width" constant="364" id="uPg-7A-3AX"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="XJC-Kb-8ud"/>
+                                        <exclude reference="4ef-C0-pHh"/>
                                         <exclude reference="kQr-A1-yNJ"/>
-                                        <exclude reference="uPg-7A-3AX"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="XJC-Kb-8ud"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="uPg-7A-3AX"/>
+                                        <exclude reference="4ef-C0-pHh"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -61,53 +68,30 @@
                         <viewLayoutGuide key="safeArea" id="Wvw-xQ-gUw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hFh-eF-YLO" firstAttribute="centerY" secondItem="6w7-H8-wAX" secondAttribute="centerY" id="1uO-zc-fU3"/>
                             <constraint firstItem="VWh-bI-jkj" firstAttribute="leading" secondItem="Wvw-xQ-gUw" secondAttribute="leading" constant="20" id="3xp-Kz-LwH"/>
-                            <constraint firstItem="Wvw-xQ-gUw" firstAttribute="bottom" secondItem="hFh-eF-YLO" secondAttribute="bottom" constant="30" id="R3q-Nj-ddj"/>
-                            <constraint firstItem="VWh-bI-jkj" firstAttribute="leading" secondItem="Wvw-xQ-gUw" secondAttribute="leading" constant="150" id="SP7-2i-r9p"/>
-                            <constraint firstItem="hFh-eF-YLO" firstAttribute="top" secondItem="VWh-bI-jkj" secondAttribute="bottom" constant="10" id="TOA-yS-Ntd"/>
+                            <constraint firstItem="hFh-eF-YLO" firstAttribute="centerX" secondItem="6w7-H8-wAX" secondAttribute="centerX" id="8CD-rf-pWr"/>
+                            <constraint firstItem="VWh-bI-jkj" firstAttribute="centerX" secondItem="6w7-H8-wAX" secondAttribute="centerX" id="Knh-FH-Wwb"/>
                             <constraint firstItem="hFh-eF-YLO" firstAttribute="leading" secondItem="Wvw-xQ-gUw" secondAttribute="leading" constant="60" id="TgN-jj-i68"/>
-                            <constraint firstItem="hFh-eF-YLO" firstAttribute="top" secondItem="VWh-bI-jkj" secondAttribute="bottom" constant="9" id="Tz6-Af-8ps"/>
-                            <constraint firstItem="Wvw-xQ-gUw" firstAttribute="trailing" secondItem="VWh-bI-jkj" secondAttribute="trailing" constant="150" id="b5J-7u-jms"/>
-                            <constraint firstItem="Wvw-xQ-gUw" firstAttribute="trailing" secondItem="hFh-eF-YLO" secondAttribute="trailing" constant="25" id="eK2-ii-mlZ"/>
+                            <constraint firstItem="kl6-M8-A3o" firstAttribute="centerY" secondItem="6w7-H8-wAX" secondAttribute="centerY" id="egR-Wc-dA4"/>
+                            <constraint firstItem="kl6-M8-A3o" firstAttribute="centerX" secondItem="6w7-H8-wAX" secondAttribute="centerX" id="glt-4G-v64"/>
                             <constraint firstItem="VWh-bI-jkj" firstAttribute="top" secondItem="Wvw-xQ-gUw" secondAttribute="top" constant="10" id="muj-fN-es9"/>
                             <constraint firstAttribute="trailing" secondItem="VWh-bI-jkj" secondAttribute="trailing" constant="20" id="nhV-FE-8WJ"/>
-                            <constraint firstItem="hFh-eF-YLO" firstAttribute="leading" secondItem="Wvw-xQ-gUw" secondAttribute="leading" constant="25" id="t5F-3I-XA9"/>
-                            <constraint firstItem="Wvw-xQ-gUw" firstAttribute="bottom" secondItem="hFh-eF-YLO" secondAttribute="bottom" constant="20" id="x2q-83-SGl"/>
-                            <constraint firstItem="hFh-eF-YLO" firstAttribute="centerX" secondItem="6w7-H8-wAX" secondAttribute="centerX" id="ynx-ht-fdx"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="R3q-Nj-ddj"/>
-                                <exclude reference="b5J-7u-jms"/>
-                                <exclude reference="eK2-ii-mlZ"/>
-                                <exclude reference="x2q-83-SGl"/>
-                                <exclude reference="TOA-yS-Ntd"/>
                                 <exclude reference="TgN-jj-i68"/>
-                                <exclude reference="Tz6-Af-8ps"/>
-                                <exclude reference="t5F-3I-XA9"/>
-                                <exclude reference="ynx-ht-fdx"/>
                                 <exclude reference="3xp-Kz-LwH"/>
-                                <exclude reference="SP7-2i-r9p"/>
                                 <exclude reference="nhV-FE-8WJ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="b5J-7u-jms"/>
-                                <exclude reference="eK2-ii-mlZ"/>
-                                <include reference="x2q-83-SGl"/>
-                                <include reference="TOA-yS-Ntd"/>
                                 <exclude reference="TgN-jj-i68"/>
-                                <include reference="ynx-ht-fdx"/>
-                                <include reference="SP7-2i-r9p"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="R3q-Nj-ddj"/>
-                                <include reference="eK2-ii-mlZ"/>
-                                <include reference="Tz6-Af-8ps"/>
-                                <include reference="t5F-3I-XA9"/>
                                 <include reference="3xp-Kz-LwH"/>
                                 <include reference="nhV-FE-8WJ"/>
                             </mask>
@@ -120,13 +104,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="drowing" image="scribble" catalog="system" id="KlE-1o-YvH"/>
                     <connections>
-                        <outlet property="segmentControl" destination="VWh-bI-jkj" id="tzj-zX-UF6"/>
+                        <outlet property="segmentedControl" destination="VWh-bI-jkj" id="VG5-Hg-IA0"/>
+                        <outlet property="viewForArc" destination="kl6-M8-A3o" id="td5-XJ-HrG"/>
                         <outlet property="viewForDraw" destination="hFh-eF-YLO" id="tc2-2M-zus"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yP-Rb-LI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893.97321428571422" y="79.710144927536234"/>
+            <point key="canvasLocation" x="892.75362318840587" y="79.6875"/>
         </scene>
         <!--button1-->
         <scene sceneID="hQE-2c-3M4">
@@ -183,6 +168,9 @@
         <image name="scribble" catalog="system" width="128" height="118"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
