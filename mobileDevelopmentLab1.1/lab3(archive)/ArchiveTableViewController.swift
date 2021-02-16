@@ -14,8 +14,8 @@ class ArchiveTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tableView.estimatedRowHeight = 200.0;
-        self.tableView.rowHeight = 44
+        self.tableView.estimatedRowHeight = UITableView.automaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         
         parseJSON.onCompletion = {currentdata in
             self.countOfBooks = currentdata.title.count
@@ -54,14 +54,13 @@ class ArchiveTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 44
+        return UITableView.automaticDimension
     }
     
 }
 
 class TableCell: UITableViewCell {
     
-    @IBOutlet weak var allLabelsStackView: UIStackView!
     @IBOutlet weak var isbn13Outlet: UILabel!
     @IBOutlet weak var priceOutlet: UILabel!
     @IBOutlet weak var subtitleOutlet: UILabel!
