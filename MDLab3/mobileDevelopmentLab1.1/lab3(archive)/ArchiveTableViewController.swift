@@ -61,7 +61,6 @@ class ArchiveTableViewController: UITableViewController {
 
 class TableCell: UITableViewCell {
     
-    @IBOutlet weak var allLabelsStackView: UIStackView!
     @IBOutlet weak var isbn13Outlet: UILabel!
     @IBOutlet weak var priceOutlet: UILabel!
     @IBOutlet weak var subtitleOutlet: UILabel!
